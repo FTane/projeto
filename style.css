@@ -1,3 +1,4 @@
+/* zerar os espaços padrão do navegador */
 * {
   margin: 0;
   padding: 0;
@@ -7,17 +8,17 @@
 :root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
-  --stroke-color: rgba(255, 255, 255, 0.5);
+  --stroke-color: rgba(25, 253, 253, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
-  --highlight-color: rgba(255, 255, 255, 0.2);
+  --highlight-color: rgba(255, 255, 255, 0.199);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
   --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
-  --stroke-color: rgba(0, 0, 0, 0.5);
+  --stroke-color: rgba(180, 20, 20, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
@@ -61,7 +62,6 @@ body * {
 #switch {
   position: relative;
   width: 64px;
-
   margin: 4px auto;
 }
 
@@ -77,7 +77,6 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
-
   animation: slide-back 0.2s;
 }
 
@@ -125,13 +124,16 @@ ul li a {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
+   /*Há funções que são incompatíveis com alguns browser sendo necessário pesquisar sobre a aplicação do comando - acesse https://caniuse.com/ para verificar
+    a compatibilidade. no comando backdrop-filter o é idicado utilizar o -webkit (vendor prefixes ou prefixos) como filtro para que o browser consiga liberar  */
+
   text-decoration: none;
   font-weight: 500;
 
   transition: background 0.2s;
 }
 
-/* pseudo-selector */
+/* pseudo-selector aplicar efeitos quando passar o mouse ensima */
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
